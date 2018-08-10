@@ -65,5 +65,14 @@ namespace NetCorePal.Hangfire.ShardingJobExtensions
                 RecurringJob.Trigger($"{name}_{i}");
             }
         }
+        /// <summary>
+        /// 触发执行job，该方法会触发该名称job的指定分片任务
+        /// </summary>
+        /// <param name="name">job 名称</param>
+        /// <param name="shardingIndex">分片索引，从0开始</param>
+        public static void Trigger(string name, int shardingIndex)
+        {
+            RecurringJob.Trigger($"{name}_{shardingIndex}");
+        }
     }
 }
