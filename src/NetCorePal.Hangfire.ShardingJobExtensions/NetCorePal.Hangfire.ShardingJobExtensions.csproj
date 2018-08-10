@@ -2,6 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/netcorepal/NetCorePal.Hangfire.Extensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/netcorepal/NetCorePal.Hangfire.Extensions.git</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>hangfire sharding job</PackageTags>
+    <Description>hangfire extension  for sharding job</Description>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\NetCorePal.Hangfire.ShardingJobExtensions.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\NetCorePal.Hangfire.ShardingJobExtensions.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.6.20" />
+  </ItemGroup>
 
 </Project>

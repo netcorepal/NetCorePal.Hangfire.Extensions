@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.6.20" />
+    <PackageReference Include="HangFire.Redis.StackExchange" Version="1.7.2" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetCorePal.Hangfire.ShardingJobExtensions\NetCorePal.Hangfire.ShardingJobExtensions.csproj" />
+  </ItemGroup>
+
+</Project>

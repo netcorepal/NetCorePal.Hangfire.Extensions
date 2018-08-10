@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.Hangfire.ShardingJobExtensions", "NetCorePal.Hangfire.ShardingJobExtensions\NetCorePal.Hangfire.ShardingJobExtensions.csproj", "{092983D3-CF08-4C6D-A44B-8686C582384C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{04E9DE61-BC47-494D-B9AA-09F14102C354}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.Hangfire.Web", "NetCorePal.Hangfire.Web\NetCorePal.Hangfire.Web.csproj", "{5666D438-FF0D-4109-9D74-73E01A0CEC24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{092983D3-CF08-4C6D-A44B-8686C582384C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{092983D3-CF08-4C6D-A44B-8686C582384C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{092983D3-CF08-4C6D-A44B-8686C582384C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5666D438-FF0D-4109-9D74-73E01A0CEC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5666D438-FF0D-4109-9D74-73E01A0CEC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5666D438-FF0D-4109-9D74-73E01A0CEC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5666D438-FF0D-4109-9D74-73E01A0CEC24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5666D438-FF0D-4109-9D74-73E01A0CEC24} = {04E9DE61-BC47-494D-B9AA-09F14102C354}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18FE4201-15D0-4890-AE12-279F6AB22408}
