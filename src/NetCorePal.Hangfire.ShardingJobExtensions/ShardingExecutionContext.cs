@@ -5,16 +5,16 @@ using System.Text;
 namespace NetCorePal.Hangfire.ShardingJobExtensions
 {
     /// <summary>
-    /// 分片job执行上下文
+    /// sharding job execution context
     /// </summary>
     public class ShardingExecutionContext
     {
         /// <summary>
-        /// 分片总数
+        /// total sharding count
         /// </summary>
         public int ShardingCount { get; set; }
         /// <summary>
-        /// 当前分片索引
+        /// current sharding index
         /// </summary>
         public int ShardingIndex { get; set; }
     }

@@ -12,15 +12,15 @@ namespace NetCorePal.Hangfire.ShardingJobExtensions
     {
         private const int MaxSharding = 100;
         /// <summary>
-        /// 添加分片job
+        /// Add sharding job to hangfrie as RecurringJob
         /// </summary>
-        /// <typeparam name="T">分片job实现类型</typeparam>
-        /// <param name="name">job名称，会根据分片索引生成jobid，如：myjob_0，myjob_1</param>
-        /// <param name="shardingCount"></param>
-        /// <param name="factory"></param>
-        /// <param name="cron"></param>
-        /// <param name="timeZone"></param>
-        /// <param name="queue"></param>
+        /// <typeparam name="T">typeof sharding job which inherit <see cref="ShardingJobBase"/> </typeparam>
+        /// <param name="name">job name,will be recurringJobId as: myjob_0，myjob_1</param>
+        /// <param name="shardingCount">the total sharding count</param>
+        /// <param name="factory">job factory</param>
+        /// <param name="cron">cron for job</param>
+        /// <param name="timeZone">timeZoneInfo</param>
+        /// <param name="queue">queue name</param>
         public static void AddOrUpdate<T>(string name, int shardingCount, Func<T> factory, string cron, TimeZoneInfo timeZone = default(TimeZoneInfo), string queue = "default") where T : ShardingJobBase
         {
             if (string.IsNullOrEmpty(name))
@@ -43,7 +43,7 @@ namespace NetCorePal.Hangfire.ShardingJobExtensions
             }
         }
         /// <summary>
-        /// 删除分片job
+        /// Remove sharding job, will remove all RecurringJob that we added
         /// </summary>
         /// <param name="name"></param>
         public static void RemoveIfExists(string name)
@@ -55,9 +55,9 @@ namespace NetCorePal.Hangfire.ShardingJobExtensions
         }
 
         /// <summary>
-        /// 触发执行job，该方法会触发该名称job的所有分片任务
+        /// Trigger sharding job, trigger all RecurringJob we added
         /// </summary>
-        /// <param name="name">job 名称</param>
+        /// <param name="name">job name</param>
         public static void Trigger(string name)
         {
             for (int i = 0; i < MaxSharding; i++)
@@ -66,10 +66,10 @@ namespace NetCorePal.Hangfire.ShardingJobExtensions
             }
         }
         /// <summary>
-        /// 触发执行job，该方法会触发该名称job的指定分片任务
+        /// Trigger RecurringJob which sharding index Equals shardingIndex
         /// </summary>
-        /// <param name="name">job 名称</param>
-        /// <param name="shardingIndex">分片索引，从0开始</param>
+        /// <param name="name">job name</param>
+        /// <param name="shardingIndex">the sharding index we want trigger</param>
         public static void Trigger(string name, int shardingIndex)
         {
             RecurringJob.Trigger($"{name}_{shardingIndex}");
